@@ -1,0 +1,45 @@
+{
+  "name": "baxel",
+  "version": "0.1.0",
+  "description": "Baxel is build on top of koa to be medium stack web framework",
+  "main": "lib/application.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "baxel-template": "https://github.com/norman784/baxel-hamet/archive/0.1.0.zip",
+  "keywords": [
+    "web",
+    "app",
+    "http",
+    "application",
+    "framework",
+    "middleware",
+    "rack"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "color-console": "0.0.1",
+    "command": "0.0.5",
+    "commander": "^2.6.1",
+    "koa": "^0.21.0",
+    "koa-router": "^5.0.1",
+    "koa-static": "^1.4.9",
+    "koa-views": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "nodemon": "^1.3.7",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.11.16",
+    "iojs": ">= 1.0.0"
+  },
+  "files": [
+    "lib"
+  ]
+}
