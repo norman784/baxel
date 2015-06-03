@@ -1,7 +1,8 @@
-0.2.1 - 2015-06-03
+0.2.2 - 2015-06-03
 ---
 
 - Fixed issues with missing configurations package.json
+- Added bin folder to repo
 
 0.2 - 2015-06-02
 ---
