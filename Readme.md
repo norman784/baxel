@@ -1,7 +1,7 @@
 Baxel
 ---
 
-Baxel is a MVC web framework build on top of [Koa](http://koajs.com),
+Baxel is a MVC web framework build on top of [Koa](http://koajs.com) framework,
 it born because there is no simple project that, IMO, doesn't is flexible
 and simple to use, and witch adopt the MVC architecture.
 
