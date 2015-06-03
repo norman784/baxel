@@ -1,3 +1,9 @@
+0.2
+---
+
+- Added an easy way to instantiate third party libraries
+- Improved Baxel core
+
 0.1 - 2015-06-01
 ---
 

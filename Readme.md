@@ -20,6 +20,7 @@ Features
 - MVC architecture project
 - Helpers support
 - ORM, ODM or DB driver independent
+- Easy way to instantiate third party libraries
 - Easy way to call models and helpers from the controllers
 - Well organized configuration files and routes
 - Template support
