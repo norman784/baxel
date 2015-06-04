@@ -10,7 +10,7 @@ just to be a glue of existing projects. There is too many projects that
 creates their own ORM, ODM or just database driver, instead of integrate
 some of the nice available out there.
 
-Also it only will provide a structure, inspired on Rubi on Rails, that will
+Also it only will provide a structure, inspired on Ruby on Rails, that will
 allow you to organise better your projects, initialise your own or third party
 libraries, call in a easy way your models, helpers, etc. 
 
