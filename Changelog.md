@@ -1,3 +1,8 @@
+0.2.4 - 2015-06-10
+---
+
+- Hotfix where bin not included on npm package 
+
 0.2.3 - 2015-06-10
 ---
 
