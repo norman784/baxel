@@ -78,50 +78,6 @@ function _run () {
 // new
 
 function _new () {
-  if (program.new == undefined || program.new.length == 0) {
-    throw new Error('Please specify a project name');
-    return;
-  }
-  
-  var options = {
-      host: url.parse(templateURL).host,
-      port: 80,
-      path: url.parse(templateURL).pathname,
-      agent: false
-  };
-  
-  console.log(options);
-
-  http.get(options, function(res) {
-      var data = [], dataLen = 0; 
-    
-      console.log('Wait until the Baxel Hamel is downloaded');
-    
-      res.on('data', function(chunk) {
-  
-              data.push(chunk);
-              dataLen += chunk.length;
-  
-          }).on('end', function() {
-              var buf = new Buffer(dataLen);
-  
-              for (var i=0, len = data.length, pos = 0; i < len; i++) { 
-                  data[i].copy(buf, pos); 
-                  pos += data[i].length; 
-              }
-              
-              var zip = new AdmZip(buf)
-                , entries = zip.getEntries();
-                
-              zip.extractAllTo (process.cwd() + '/', true);
-              console.log(entries);
-              
-              console.log('Baxel Hamet finished, now enter the project folder "' + program.new + '" and start hacking');
-          });
-  });
-}
-
-function _new2 () {
   var request = require('request');
   var data = [], dataLen = 0; 
   
@@ -155,13 +111,13 @@ function _new2 () {
     
     fs.renameSync(_path + '/' + folder[0], _path + '/../' + program.new);
     fs.rmdirSync(_path);
-  })
+  });
 }
 
 // actions
 
 if (program.new) {
-  _new2();
+  _new();
 } else {
   _run();
 }
