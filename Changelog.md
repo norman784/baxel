@@ -1,3 +1,10 @@
+0.2.3 - 2015-06-10
+---
+
+- Added body parser
+- Fixed issue where model, ctrl and helper method was not exposed
+- Fixed issue where initialisers was not exported
+
 0.2.2 - 2015-06-03
 ---
 
