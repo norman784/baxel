@@ -1,3 +1,8 @@
+0.2.6 - 2015-06-12
+---
+
+- Fixed issue where middlewares added on app.js was not working
+
 0.2.4 - 2015-06-10
 ---
 
