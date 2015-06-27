@@ -21,7 +21,9 @@ program
   .version(require('../package.json').version)
   .usage('[options]')
   .option('run', 'run Baxel project on the current directory')
-  .option('new [name]', 'creates a new project on the folder with the same project name');
+  .option('new [name]', 'creates a new project on the folder with the same project name')
+  .option('--development', 'Set development environment')
+  .option('--production', 'Set production environment');
 
 program.on('--help', function(){
   console.log('  Usage:');
@@ -65,7 +67,9 @@ function _run () {
     script: 'app.js',
     ext: 'js json'
   });
-  
+
+  process.env.environment = program.development ? 'development' : 'production';
+
   nodemon.on('start', function () {
     console.log('Baxel development server started');
   }).on('quit', function () {
@@ -79,8 +83,8 @@ function _run () {
 
 function _new () {
   var request = require('request');
-  var data = [], dataLen = 0; 
-  
+  var data = [], dataLen = 0;
+
   request(
     { method: 'GET'
     , uri: templateURL
@@ -95,20 +99,20 @@ function _new () {
   })
   .on('end', function() {
     var buf = new Buffer(dataLen);
-  
-    for (var i=0, len = data.length, pos = 0; i < len; i++) { 
-        data[i].copy(buf, pos); 
-        pos += data[i].length; 
+
+    for (var i=0, len = data.length, pos = 0; i < len; i++) {
+        data[i].copy(buf, pos);
+        pos += data[i].length;
     }
-    
+
     var zip = new AdmZip(buf)
       , _path = process.cwd() + '/tmp';
     zip.extractAllTo (_path, true);
-    
+
     var folder = fs.readdirSync(_path).filter(function(file) {
       return fs.statSync(path.join(_path, file)).isDirectory();
     });
-    
+
     fs.renameSync(_path + '/' + folder[0], _path + '/../' + program.new);
     fs.rmdirSync(_path);
   });
