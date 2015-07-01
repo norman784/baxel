@@ -12,7 +12,7 @@ some of the nice available out there.
 
 Also it only will provide a structure, inspired on Ruby on Rails, that will
 allow you to organise better your projects, initialise your own or third party
-libraries, call in a easy way your models, helpers, etc. 
+libraries, call in a easy way your models, helpers, etc.
 
 Features
 ---
@@ -53,3 +53,8 @@ Runing Baxel for production, its just like another nodejs app
 ```
 node app.js
 ```
+
+License
+---
+
+MIT
