@@ -8,8 +8,7 @@ var fs = require('fs')
   , http = require('http')
   , url = require('url')
   , nodemon = require('nodemon')
-//  , templateURL = require('../package.json')['baxel-template'];
-  , templateURL = 'https://github.com/request/request/archive/v2.57.1.zip';
+  , templateURL = require('../package.json')['baxel-template'];
 
 // Baxel options
 
