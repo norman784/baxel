@@ -1,3 +1,10 @@
+0.4.0 - 2015-07-02
+---
+
+- Added environment support
+- Reworked routes to support resources and global methods for paths
+- Added tasks partial support
+
 0.3.0 - 2015-06-25
 ---
 
