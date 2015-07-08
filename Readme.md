@@ -1,6 +1,8 @@
 Baxel
 ---
 
+[![Join the chat at https://gitter.im/norman784/baxel](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/norman784/baxel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Baxel is a MVC web framework build on top of [Koa](http://koajs.com) framework,
 it born because there is no simple project that, IMO, doesn't is flexible
 and simple to use, and witch adopt the MVC architecture.
