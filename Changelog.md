@@ -1,3 +1,13 @@
+0.5.0 - 2015-09-04
+---
+
+- Added support for custom server initialisation
+- Added support for custom koa framework instance
+- Ignore no js files when loading config, models, etc
+- Breaking backwards compatibility:
+	- require('baxel').Initializer changed to require('baxel').initializer
+	- require('baxel').Model changed to require('baxel').model
+
 0.4.0 - 2015-07-02
 ---
 

@@ -56,6 +56,38 @@ Runing Baxel for production, its just like another nodejs app
 node app.js
 ```
 
+Socket.io integration
+---
+
+```javascript
+// app.js must looks like
+var baxel = require('baxel')()
+	, http = require('http').Server(baxel.app)
+	, io = require('socket.io');
+
+baxel.run(function(app, port){
+	http.listen(port, function(){
+		console.log('listening on port: ' + port);
+	});
+});
+```
+
+Using custom koa frameworks
+---
+
+```javascript
+// app.js must looks like
+var koa = require('koa.io')
+	, app = koa()
+	, baxel = require('baxel')(app);
+
+baxel.run(function(app, port){
+	app.listen(port, function(){
+		console.log('listening on port: ' + port);
+	});
+});
+```
+
 License
 ---
 
