@@ -1,6 +1,6 @@
 {
   "name": "baxel",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Baxel is build on top of koa to be medium stack web framework",
   "main": "lib/application.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/norman784/baxel"
   },
-  "baxel-template": "https://github.com/norman784/baxel-hamet/archive/v0.4.0.zip",
+  "baxel-template": "https://github.com/norman784/baxel-hamet/archive/v0.5.0.zip",
   "keywords": [
     "web",
     "app",
