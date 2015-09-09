@@ -1,6 +1,6 @@
 {
   "name": "baxel",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Baxel is build on top of koa to be medium stack web framework",
   "main": "lib/application.js",
   "scripts": {

@@ -21,8 +21,7 @@ program
   .usage('[options]')
   .option('run', 'run Baxel project on the current directory')
   .option('new [name]', 'creates a new project on the folder with the same project name')
-  .option('--development', 'Set development environment')
-  .option('--production', 'Set production environment');
+  .option('env [development|production|custom]', 'Set app environment')
 
 program.on('--help', function(){
   console.log('  Usage:');
@@ -67,14 +66,14 @@ function _run () {
     ext: 'js json'
   });
 
-  process.env.environment = program.development ? 'development' : 'production';
+  process.env.environment = program.env ? program.env : 'production';
 
   nodemon.on('start', function () {
-    console.log('Baxel development server started');
+    console.log('Baxel [' + process.env.environment + '] server started');
   }).on('quit', function () {
-    console.log('Baxel development has quit');
+    console.log('Baxel [' + process.env.environment + '] has quit');
   }).on('restart', function (files) {
-    console.log('Baxel development restarted due to: ', files);
+    console.log('Baxel [' + process.env.environment + '] restarted due to: ', files);
   });
 }
 

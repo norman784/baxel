@@ -1,3 +1,8 @@
+0.5.2 - 2015-09-09
+---
+
+- Reworked how baxel environment is set
+
 0.5.1 - 2015-09-09
 ---
 
