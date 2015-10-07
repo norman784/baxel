@@ -1,3 +1,15 @@
+0.6.0 - 2015-09-23
+---
+
+- Added [koa-csrf](https://github.com/koajs/csrf) dependency
+- For security reasons now users and passwords set from .env file
+- [Optional] Added [koa-generic-session](https://github.com/koajs/generic-session) support
+- [Optional] Added i18n support [koa-i18n](https://github.com/koa-modules/i18n)
+- Configuration changed a lot
+  - Routes now is located in config/routes.json and handled by [baxel-route](http://github.com/norman784/baxel-route)
+  - Configuration can be json or js files
+- Fixed issue where public is available in all vhosts, now its only available on enabled domains
+
 0.5.2 - 2015-09-09
 ---
 
@@ -16,7 +28,7 @@
 - Added vhost support
 - Ignore no js files when loading config, models, etc
 - Breaking backwards compatibility:
-	- require('baxel').Initializer changed to require('baxel').initializer
+	- require('baxel').Initialiser changed to require('baxel').initialiser
 	- require('baxel').Model changed to require('baxel').model
 
 0.4.0 - 2015-07-02
@@ -30,7 +42,7 @@
 ---
 
 - Fix typo issue
-- Changed how initializers works
+- Changed how initialisers works
 - Load models on start
 
 0.2.7 - 2015-06-15
@@ -53,7 +65,7 @@
 
 - Added body parser
 - Fixed issue where model, ctrl and helper method was not exposed
-- Fixed issue where initializers was not exported
+- Fixed issue where initialisers was not exported
 
 0.2.2 - 2015-06-03
 ---
