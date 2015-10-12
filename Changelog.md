@@ -1,3 +1,16 @@
+0.7.0 - 2015-10-09
+---
+
+- Added support for custom middlewares
+- Removed hardcoded middlewares
+- Added before_action support to controllers
+
+0.6.1 - 2015-10-07
+---
+
+- Fix initializer typo issue (hate spellcheckers)
+- Updated path for template
+
 0.6.0 - 2015-09-23
 ---
 
@@ -28,7 +41,7 @@
 - Added vhost support
 - Ignore no js files when loading config, models, etc
 - Breaking backwards compatibility:
-	- require('baxel').Initialiser changed to require('baxel').initialiser
+	- require('baxel').initializer changed to require('baxel').initializer
 	- require('baxel').Model changed to require('baxel').model
 
 0.4.0 - 2015-07-02
@@ -42,7 +55,7 @@
 ---
 
 - Fix typo issue
-- Changed how initialisers works
+- Changed how initializers works
 - Load models on start
 
 0.2.7 - 2015-06-15
@@ -65,7 +78,7 @@
 
 - Added body parser
 - Fixed issue where model, ctrl and helper method was not exposed
-- Fixed issue where initialisers was not exported
+- Fixed issue where initializers was not exported
 
 0.2.2 - 2015-06-03
 ---

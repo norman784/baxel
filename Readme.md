@@ -26,6 +26,7 @@ Features
 - Easy way to call models and helpers from the controllers
 - Well organized configuration files and routes
 - Template support
+- Custom middleware support
 
 Usage
 ---
@@ -86,6 +87,76 @@ baxel.run(function(app, port){
 		console.log('listening on port: ' + port);
 	});
 });
+```
+
+Custom middleware support
+---
+
+If you want to use i.e. koa-minify you need to setup their initialization 
+file inside `config/middlewares`
+
+```javascript
+module.exports = {
+	dir: __dirname
+}
+```
+
+Baxel internally will search this module in the root node_modules folder
+and will initialize with the above options.
+
+If the module has more than one param, like koa-locales, can be used in this way:
+
+```javascript
+module.exports = function(app, mod) {
+	return mod(app, {
+		dirs: [__dirname + '/locales', __dirname + '/foo/locales']
+	});
+}
+```
+
+This allows to use any koa middleware without the need to write a wrapper around it.
+
+Another note, to use middlewares with specific subdomain you need to put inside a
+subfolder with the subdomain name 
+
+`i.e. config/middlewares/koa-minify` will be instantiated in the root and each subdomain
+`i.e. config/middlewares/root/koa-minify` will be instantiated only in the root
+`i.e. config/middlewares/cms/koa-minify` will be instantiated only in the cms subdomain
+
+Controllers
+---
+
+***Before action***
+
+* Helper: string or string array containing the helper middleware that will be aplied to each action
+* Except: string array with excluded actions
+* Included: string array with excluded actions
+
+```
+exports.before_action = {
+	"helper": "authorization"
+}
+```
+
+```
+exports.before_action = {
+	"helper": "authorization",
+	"except": ["index", "details"]
+}
+```
+
+```
+exports.before_action = {
+	"helper": "authorization",
+	"only": ["delete"]
+}
+```
+
+```
+exports.before_action = {
+	"helper": ["authorization", "set_locale"],
+	"only": ["delete"]
+}
 ```
 
 License
