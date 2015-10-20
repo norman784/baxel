@@ -1,3 +1,9 @@
+0.8.0 - 2015-10-19
+---
+
+- Added interactive CLI (thanks to [vorpal](https://github.com/dthree/vorpal))
+- Added serializers support
+
 0.7.0 - 2015-10-09
 ---
 
