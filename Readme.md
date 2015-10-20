@@ -57,6 +57,27 @@ Runing Baxel for production, its just like another nodejs app
 node app.js
 ```
 
+Interactive CLI, its only available when run the application with baxel CLI
+
+```
+baxel$ help
+
+  Commands:
+
+    help [command]          Provides help for a given command.
+    exit [options]          Exits instance of Vorpal.
+    paths [options] [ctrl]  Show paths
+    env <env> [value]       Get / Set environment variable
+    task <task>             Execute certain task
+    model                   Enable model execution
+    helper                  Enable helper execution (helper with generators not suported yet!)
+```
+
+This tool is not safe to use in production, it helps you to debug your application quickly, 
+change environment variables and execute some files (models, helpers and tasks)
+
+There is 
+
 Socket.io integration
 ---
 
