@@ -1,6 +1,6 @@
 {
   "name": "baxel",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Baxel is build on top of koa to be medium stack web framework",
   "main": "lib/application.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.4.7",
-    "baxel-route": "^0.2.0",
+    "baxel-route": "^0.3.0",
     "co": "~>4.6.0",
     "color-console": "0.0.1",
     "command": "0.0.5",

@@ -1,3 +1,8 @@
+0.8.1 - 2015-10-27
+---
+
+- When there in a single domain it is attached to the main app istead of a vhost app
+
 0.8.0 - 2015-10-19
 ---
 
