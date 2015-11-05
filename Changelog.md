@@ -1,3 +1,15 @@
+0.9.0 - 2015-11-04
+---
+
+- Reworked initializers, now requires manually setup of the module instead of a semi-automated configuration,
+so we gain more flexibility and completly remove the need of create custom wrappers for the modules ;)
+
+0.8.2 - 2015-11-03
+---
+
+- Fixed issue where index file inside middleware was recognized as module instead of custom initialization
+
+
 0.8.1 - 2015-10-27
 ---
 
