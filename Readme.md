@@ -27,6 +27,7 @@ Features
 - Well organized configuration files and routes
 - Template support
 - Custom middleware support
+- Built in socket.io support ([koa.io](https://github.com/koajs/koa.io))
 
 Usage
 ---
@@ -49,6 +50,12 @@ restarted when changed made on the project
 
 ```
 baxel run
+```
+
+Enable interactive mode
+
+```
+baxel run -i
 ```
 
 Runing Baxel for production, its just like another nodejs app
@@ -75,40 +82,6 @@ baxel$ help
 
 This tool is not safe to use in production, it helps you to debug your application quickly, 
 change environment variables and execute some files (models, helpers and tasks)
-
-There is 
-
-Socket.io integration
----
-
-```javascript
-// app.js must looks like
-var baxel = require('baxel')()
-	, http = require('http').Server(baxel.app)
-	, io = require('socket.io');
-
-baxel.run(function(app, port){
-	http.listen(port, function(){
-		console.log('listening on port: ' + port);
-	});
-});
-```
-
-Using custom koa frameworks
----
-
-```javascript
-// app.js must looks like
-var koa = require('koa.io')
-	, app = koa()
-	, baxel = require('baxel')(app);
-
-baxel.run(function(app, port){
-	app.listen(port, function(){
-		console.log('listening on port: ' + port);
-	});
-});
-```
 
 Custom middleware support
 ---
@@ -179,6 +152,43 @@ exports.before_action = {
 	"only": ["delete"]
 }
 ```
+
+Routes
+---
+
+Supports vhosts, root will be mounted on the root host, and subdomains in subdomain.host
+
+```json
+{
+  "root": {
+    "index": {
+      "get": "home#index"
+    }
+  },
+  "api": {
+    "subdomain":              [ "api", "api.dev" ],
+    "index":                  "api/api#index",
+    "message": {
+                              "socket": "api/messages#index"
+    }
+  },
+  "cdn": {
+    "subdomain":              [ "cdn", "cdn.dev" ]
+  }
+}
+```
+
+For development or production you can disable or enable certain routes
+
+```
+export DOMAIN_MOUNT=home 		// will be mounted only home
+export DOMAIN_MOUNT=home,api 	// will mount only 2 subdomains
+export DOMAIN_IGNORE=cdn 		// will ignore cdn and only mount home and api
+export DOMAIN_IGNORE=cdn,api 	// will ignore cdn and api, only will mount home
+```
+
+When only one domain it available to mount, the controllers will be mounted on the root koa app 
+and can be accessed by ip or localhost
 
 License
 ---
