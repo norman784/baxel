@@ -1,3 +1,11 @@
+0.10.0 - 2015-11-09
+---
+
+- Refactored router, now supports socket verb and its declared as normal controller#action
+- Added option to mount only one domain (good for test api/socket in a local network)
+- Added option to ignore certains domains (i.e. in case that you serve static files in development but in production nginx or other server handles it for you)
+- [cli] Interactive console now must be enabled by calling -i parameter
+
 0.9.0 - 2015-11-04
 ---
 
