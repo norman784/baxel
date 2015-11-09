@@ -4,7 +4,7 @@ let nodemon = require("nodemon");
 
 module.exports = function (program) {
   nodemon({
-    script: __dirname + "/interactive",
+    script: program.i ? __dirname + "/interactive" : process.cwd() + "/app.js",
     ext: "js json"
   });
 

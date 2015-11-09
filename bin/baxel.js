@@ -14,6 +14,7 @@ program
   .version(require("../package.json").version)
   .usage("[options]")
   .option("run", "run Baxel project on the current directory")
+  .option("i", "enable interactive mode")
   .option("new [name]", "creates a new project on the folder with the same project name");
 
 program.on("--help", function(){
