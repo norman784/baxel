@@ -1,3 +1,11 @@
+0.11.0 - 2015-11-10
+---
+
+- Add seamless option in server.json, the default value its true
+- Fixed issue where helpers not loaded correctly
+- Fixed typo issue
+- Fixed issue where helpers, models, modules and serializer was not assigned to socket controllers and vapps controllers when not running in seamless mode
+
 0.10.0 - 2015-11-09
 ---
 
